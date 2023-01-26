@@ -1,0 +1,117 @@
+    {% extends 'books/main.html' %}
+	{% load static %}
+
+    {% block content %}
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+			<title>Dashboard of library</title>
+			<!-- 	material icons -->
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp"/>
+			  <!-- stylesheet -->
+			<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+		</head>
+		<body>
+			<div class="container">
+				<aside>
+					<div class="top">
+						<div class="logo">
+						<img src="logo.jpg">
+						<h2>lib<span class="danger">rary</span class="danger"> Manag<span>ement</span></h2>
+						</div>
+						<div class="close" id="btn-close">
+						<span class="material-symbols-sharp">close</span>
+						</div>
+					</div>
+
+
+					<div class="sidebar">
+						<a href="{% url 'home' %}">
+							<span class="material-symbols-sharp">grid_view</span>
+							<h3>Dashboard</h3>
+						</a>
+						<a href="#" class="active">
+							<span class="material-symbols-sharp">person_add</span>
+							<h3>User</h3>
+						</a>
+						<a href="{% url 'customer' %}">
+							<span class="material-symbols-sharp">menu_book</span>
+							<h3>Add Book</h3>
+						</a>
+						<a href="#">
+							<span class="material-symbols-sharp">settings</span>
+							<h3>Setting</h3>
+						</a>
+						<a href="{% url 'product' %}">
+							<span class="material-symbols-sharp">person</span>
+							<h3>Add Student</h3>
+						</a>
+						<a href="{% url 'logout' %}" class="log">
+							<span>{{request.user}}</span>
+							<span class="material-symbols-sharp">logout</span>
+							<h3>Logout</h3>
+						</a>
+					</div>
+				</aside>
+				<main>
+			<div class="insights">
+				<div class="sales">
+					<span class="material-symbols-sharp">monitoring</span>
+					<div class="middle">
+						<div class="left">
+							<h3>Total student</h3>
+							<h1>{{product_count}}</h1>
+							<small>last 24 hour</small>
+						</div>
+					</div>
+				</div>
+				<!----------------------------------End of sales------------------>
+				<div class="expensis">
+					<span class="material-symbols-sharp">bar_chart</span>
+					<div class="middle">
+						<div class="left">
+							<h3>Expensis</h3>
+							<h1>$200</h1>
+							<small>last 24 hour</small>
+						</div>
+					</div>
+				</div>
+				<!------------------------------End of Expenses------------------>
+				<div class="income">
+					<span class="material-symbols-sharp">stacked_line_chart</span>
+					<div class="middle">
+						<div class="left">
+							<h3>Income</h3>
+							<h1>$2500</h1>
+							<small>last 24 hour</small>
+						</div>
+					</div>
+				</div>
+			</div>
+					<div class="card">
+            <a class='card-link' href='product-detail.html' target="_blank">
+                    <img src="shirt.png" alt="..." />
+            <div class="card-body">
+
+                    <div class="card-title">
+                            Book Name
+                    </div>
+                    <h3 style="font-size:20px;">Author</h3>
+
+                    <h4 class='price'>Publisher</h4>
+                    </div>
+                    </a>
+                    <div class='button-wrapper'>
+                     <button class='btn btn-blue add-to-cart'>
+                     View
+                    </button>
+             </div>
+    		 </div>
+
+		</main>
+			</div>
+		</body>
+	</html>
+    {% endblock %}
+

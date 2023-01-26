@@ -1,0 +1,44 @@
+ {% extends 'books/main.html' %}
+
+    {% block content %}
+        <br>
+        <div class="row">
+            <div class="col-md">
+                <div class="card card-body">
+                    <h3>Students</h3>
+                    <a href="{% url 'form' %}">add student</a>
+                </div>
+                <div class="card card-body">
+                    <table class="table">
+                        <tr>
+                            <th>pic</th>
+                            <th>roll no</th>
+                            <th>name</th>
+                            <th>branch</th>
+                            <th>contact_no</th>
+                            <th>total_books_due</th>
+                            <th>email</th>
+                            <th>Action</th>
+                        </tr>
+                        {% for item in products %}
+                        <tr>
+                            <td>pic</td>
+                            <td> {{item.roll_no}}</td>
+                            <td> {{item.name}}</td>
+                            <td> {{item.branch}}</td>
+                            <td> {{item.contact_no}}</td>
+                            <td>total_books_due</td>
+                            <td> {{item.email}}</td>
+                            <td>
+                                <a href="" class="btn btn-success">Edit</a>
+                            </td>
+                         </tr>
+                        {% endfor %}
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+    {% endblock content %}
